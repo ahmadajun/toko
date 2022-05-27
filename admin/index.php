@@ -1,7 +1,7 @@
 <?php  
 include '../config/class.php';
 include '../config/fungsi.php';
-if (!isset($_SESSION['user'])) 
+if (!isset($_SESSION['user']['level'])) 
 {
 	echo "<script>alert('Anda belum login!');</script>";
 	echo "<script>location='login';</script>";
@@ -10,6 +10,7 @@ else
 {
 	$id_user = $_SESSION['user']['id_user'];
 	$data_user =  $user->detail($id_user);
+	//$level_user =  $user->detail($id_user);
 }
 $data_instansi = $instansi->detail();
 ?>
@@ -77,9 +78,15 @@ $data_instansi = $instansi->detail();
 					<!-- <li class="nav-item">
 						<a href="index.php?halaman=return" class="nav-link "><span class="pcoded-micon"><i class="feather icon-package"></i></span><span class="pcoded-mtext">Data Return</span></a>
 					</li> -->
+					<?php 
+					if($data_user['level'] == 'Owner') {
+					?>
 					<li class="nav-item">
 						<a href="index.php?halaman=bank" class="nav-link "><span class="pcoded-micon"><i class="feather icon-credit-card"></i></span><span class="pcoded-mtext">Data Bank</span></a>
 					</li>
+					<?php
+					}
+					?>
 					<li class="nav-item">
 						<a href="index.php?halaman=laporan" class="nav-link "><span class="pcoded-micon"><i class="feather icon-printer"></i></span><span class="pcoded-mtext">Data Laporan</span></a>
 					</li>
@@ -341,21 +348,32 @@ $data_instansi = $instansi->detail();
 		{
 			include 'laporan/list.php';
 		}
-		elseif ($_GET['halaman']=='bank') 
+		elseif ($_GET['halaman']=='bank' && $data_user['level'] == 'Owner') 
 		{
 			include 'bank/list.php';
+			
 		}
-		elseif ($_GET['halaman']=='tambahbank') 
+		
+		elseif ($_GET['halaman']=='tambahbank' && $data_user['level'] == 'Owner') 
 		{
 			include 'bank/add.php';
 		}
-		elseif ($_GET['halaman']=='ubahbank') 
+		elseif ($_GET['halaman']=='ubahbank' && $data_user['level'] == 'Owner') 
 		{
 			include 'bank/edit.php';
 		}
-		elseif ($_GET['halaman']=='hapusbank') 
+		elseif ($_GET['halaman']=='hapusbank' && $data_user['level'] == 'Owner') 
 		{
 			include 'bank/delete.php';
+		}
+		elseif ($_GET['halaman']=='bank' OR $_GET['halaman']=='tambahbank' OR $_GET['halaman']=='ubahbank' OR $_GET['halaman']=='hapusbank' && $data_user['level'] !== 'Owner') 
+		{
+			echo "<script>alert('Anda tidak punya hak akses!');</script>";
+			?>
+			<script>
+		location='./';
+			</script>
+			<?php
 		}
 		elseif ($_GET['halaman']=='promo') 
 		{

@@ -1,5 +1,8 @@
 <?php  
-$data = $bank->show();
+
+    $data = $bank->show();
+
+
 ?>
 <section class="pcoded-main-container">
     <div class="pcoded-content">
