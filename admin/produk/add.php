@@ -30,7 +30,7 @@ $kategori = $kategori->show();
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="">Kategori</label>
-                                    <select name="id_kategori" id="id_kategori" class="form-control">
+                                    <select name="id_kategori" id="id_kategori" class="form-control" required="">
                                         <option value="">- Pilih Kategori -</option>
                                         <?php foreach ($kategori as $key => $value): ?>
                                             <option value="<?= $value['id_kategori'] ?>"><?= $value['nama_kategori'] ?></option>

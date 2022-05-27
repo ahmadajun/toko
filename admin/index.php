@@ -55,26 +55,55 @@ $data_instansi = $instansi->detail();
 						<a href="./" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
 					</li>
 					
+					<?php 
+					if($data_user['level'] == 'Admin') {
+					?>
 					<li class="nav-item">
 						<a href="index.php?halaman=kategori" class="nav-link "><span class="pcoded-micon"><i class="feather icon-list"></i></span><span class="pcoded-mtext">Data Kategori</span></a>
 					</li>
+					<?php
+					}?>
+
+					<?php 
+					if($data_user['level'] == 'Admin') {
+					?>
 					<li class="nav-item">
 						<a href="index.php?halaman=produk" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Data Produk</span></a>
 					</li>
-					
+					<?php
+					}?>
+
 					<!-- <li class="nav-item">
 						<a href="index.php?halaman=penjualan" class="nav-link "><span class="pcoded-micon"><i class="feather icon-airplay"></i></span><span class="pcoded-mtext">Kasir</span></a>
 					</li> -->
+
+					<?php 
+					if($data_user['level'] == 'Owner') {
+					?>
 					<li class="nav-item">
 						<a href="index.php?halaman=promo" class="nav-link "><span class="pcoded-micon"><i class="feather icon-percent"></i></span><span class="pcoded-mtext">Data Promo</span></a>
 					</li>
-					
+					<?php
+					}?>
+
+					<?php 
+					if($data_user['level'] == 'Admin') {
+					?>
 					<li class="nav-item">
 						<a href="index.php?halaman=pelanggan" class="nav-link "><span class="pcoded-micon"><i class="feather icon-users"></i></span><span class="pcoded-mtext">Data Pelanggan</span></a>
 					</li>
+					<?php
+					}?>
+
+					<?php 
+					if($data_user['level'] == 'Admin') {
+					?>
 					<li class="nav-item">
 						<a href="index.php?halaman=pembelian" class="nav-link "><span class="pcoded-micon"><i class="feather icon-shopping-cart"></i></span><span class="pcoded-mtext">Data Pembelian</span></a>
 					</li>
+					<?php
+					}?>
+
 					<!-- <li class="nav-item">
 						<a href="index.php?halaman=return" class="nav-link "><span class="pcoded-micon"><i class="feather icon-package"></i></span><span class="pcoded-mtext">Data Return</span></a>
 					</li> -->
@@ -87,9 +116,11 @@ $data_instansi = $instansi->detail();
 					<?php
 					}
 					?>
+
 					<li class="nav-item">
 						<a href="index.php?halaman=laporan" class="nav-link "><span class="pcoded-micon"><i class="feather icon-printer"></i></span><span class="pcoded-mtext">Data Laporan</span></a>
 					</li>
+					
 					<?php 
 					if($data_user['level'] == 'Owner') {
 					?>
@@ -99,18 +130,28 @@ $data_instansi = $instansi->detail();
 					<?php
 					}
 					?>
+					
 					<li class="nav-item">
 						<a href="index.php?halaman=testimoni" class="nav-link "><span class="pcoded-micon"><i class="feather icon-user"></i></span><span class="pcoded-mtext">Testimoni</span></a>
 					</li>
+
 					<li class="nav-item">
 						<a href="index.php?halaman=pesan" class="nav-link "><span class="pcoded-micon"><i class="feather icon-mail"></i></span><span class="pcoded-mtext">Pesan</span></a>
 					</li>
+					
+					
 					<li class="nav-item pcoded-hasmenu">
 						<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-settings"></i></span><span class="pcoded-mtext">Pengaturan</span></a>
 						<ul class="pcoded-submenu">
+							<?php 
+							if($data_user['level'] == 'Owner') {
+							?>
 							<li><a href="index.php?halaman=instansi">Identitas Website</a></li>
 							<li><a href="index.php?halaman=banner">Banner</a></li>
 							<li><a href="index.php?halaman=logo">Logo</a></li>
+							<?php
+							}?>
+
 							<li><a href="index.php?halaman=profil">Profil</a></li>
 							<li><a href="index.php?halaman=ubah_password">Ubah Password</a></li>
 						</ul>
@@ -251,7 +292,7 @@ $data_instansi = $instansi->detail();
 			</script>
 			<?php
 		}
-		elseif ($_GET['halaman']=='supplier') 
+		elseif ($_GET['halaman']=='supplier' ) 
 		{
 			include 'supplier/list.php';
 		}
@@ -267,23 +308,23 @@ $data_instansi = $instansi->detail();
 		{
 			include 'supplier/delete.php';
 		}
-		elseif ($_GET['halaman']=='produk') 
+		elseif ($_GET['halaman']=='produk' && $data_user['level'] == 'Admin') 
 		{
 			include 'produk/list.php';
 		}
-		elseif ($_GET['halaman']=='tambahproduk') 
+		elseif ($_GET['halaman']=='tambahproduk' && $data_user['level'] == 'Admin') 
 		{
 			include 'produk/add.php';
 		}
-		elseif ($_GET['halaman']=='ubahproduk') 
+		elseif ($_GET['halaman']=='ubahproduk' && $data_user['level'] == 'Admin') 
 		{
 			include 'produk/edit.php';
 		}
-		elseif ($_GET['halaman']=='hapusproduk') 
+		elseif ($_GET['halaman']=='hapusproduk' && $data_user['level'] == 'Admin') 
 		{
 			include 'produk/delete.php';
 		}
-		elseif ($_GET['halaman']=='detailproduk') 
+		elseif ($_GET['halaman']=='detailproduk' && $data_user['level'] == 'Admin') 
 		{
 			include 'produk/detail.php';
 		}
@@ -461,6 +502,11 @@ $data_instansi = $instansi->detail();
 		elseif ($_GET['halaman']=="laba") 
 		{
 			include 'grafik/laba.php';
+		}
+
+		elseif ($_GET['halaman']=="pesan") 
+		{
+			include 'pesan/list.php';
 		}
 	
 		

@@ -32,6 +32,7 @@ $data = $pesan->show();
                                 <th>Telepon</th>
                                 <th>Pesan</th>
                                 <th>Tanggal Pesan</th>
+                                <th>Tindakan</th>
                             </tr>
                         </thead>
                         <tbody>

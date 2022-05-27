@@ -50,25 +50,26 @@
 					<br>
 					<br>
 					<!-- kritik saran -->
+					<form method="post" enctype="multipart/form-data">
 					<h3>Kritik dan Saran</h3>
 					
 					<div class="form-group col-md-13">
 						<label for="">Nama</label>
-						<input type="text" name="nama_pemilik" class="form-control" placeholder="Nama" required="">
+						<input type="text" name="nama_pesan" class="form-control" placeholder="Nama" required="">
 					</div>
 					<div class="form-group col-md-13">
 						<label for="">Email</label>
-						<input type="text" name="nama_pemilik" class="form-control" placeholder="Email" required="">
+						<input type="text" name="email_pesan" class="form-control" placeholder="Email" required="">
 					</div>
 					<div class="form-group col-md-13">
 						<label for="">Telepon</label>
-						<input type="text" name="nama_pemilik" class="form-control" placeholder="Telepon" required="">
+						<input type="text" name="kontak_pesan" class="form-control" placeholder="Telepon" required="">
 					</div>
 					<div class="form-group col-md-13">
 						<label for="">Pesan</label>
-						<textarea placeholder="Pesan" class="form-control" name="xmessage" required rows="5"></textarea>
+						<textarea placeholder="Pesan" name="saran_pesan" class="form-control" name="xmessage" required rows="5"></textarea>
 					</div>
-					<button type="submit" class="btn btn-primary btn-submit">Kirim</button>
+					<button type="submit" name="simpan" class="btn btn-primary btn-submit">Kirim</button>
 					<!-- <div class="contact-social">
 						<a href="#"><i class="fa fa-instagram"></i></a>
 						<a href="#"><i class="fa fa-facebook"></i></a>
@@ -83,6 +84,26 @@
 				</div>
 			</div>
 		</div>
+</form>
+
+<?php  
+                        if (isset($_POST['simpan'])) 
+                        {
+                            $hasil = $pesan->add($_POST['nama_pesan'],$_POST['email_pesan'],$_POST['kontak_pesan']
+							,$_POST['saran_pesan']);
+                            if ($hasil=="sukses") 
+                            {
+                                echo "<script>alert('Pesan telah kami terima, Terima Kasih!');</script>";
+                                echo "<script>location='./kontak';</script>";
+                            }
+                            else
+                            {
+                                echo "<script>alert('Produk gagal ditambahkan, produk sudah terdaftar pada sistem!');</script>";
+                                echo "<script>location='index.php?halaman=tambahproduk';</script>";
+                            }
+                        }
+                        ?>
+
 	</section>
 
 	<section class="related-product-section spad">

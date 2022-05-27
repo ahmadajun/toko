@@ -1830,6 +1830,41 @@ class supplier
 	}
 }
 
+class pesan
+{
+	public $koneksi;
+	function __construct($mysqli)
+	{
+		$this->koneksi = $mysqli;
+	}
+
+	function detail($id_pesan)
+	{
+		$ambil = $this->koneksi->query("SELECT * FROM tbl_pesan WHERE id_pesan='$id_pesan'");
+		$pecah = $ambil->fetch_assoc();
+		return $pecah;
+	}
+
+	function show()
+	{
+		$semuadata = array();
+		$ambil = $this->koneksi->query("SELECT * FROM tbl_pesan ORDER BY id_pesan DESC");
+		while ($pecahdata=$ambil->fetch_assoc()) 
+		{
+			$semuadata[]=$pecahdata;
+		}
+		return $semuadata;
+	}
+
+	function add($nama_pesan,$email_pesan,$kontak_pesan,$saran_pesan)
+	{
+		$id_user = $_SESSION['user']['id_user'];
+		$this->koneksi->query("INSERT INTO tbl_pesan (nama_pesan,email_pesan,kontak_pesan,saran_pesan) 
+		VALUES ('$nama_pesan','$email_pesan','$kontak_pesan','$saran_pesan')");
+		return "sukses";
+	}
+}
+
 $pembelian     = new pembelian($mysqli);
 $pelanggan     = new pelanggan($mysqli);
 $user 	       = new user($mysqli);
@@ -1845,4 +1880,5 @@ $supplier 	   = new supplier($mysqli);
 $pengadaan 	   = new pengadaan($mysqli);
 $promo 	   = new promo($mysqli);
 $penjualan 	   = new penjualan($mysqli);
+$pesan = new pesan($mysqli);
 ?>
