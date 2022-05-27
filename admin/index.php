@@ -90,9 +90,15 @@ $data_instansi = $instansi->detail();
 					<li class="nav-item">
 						<a href="index.php?halaman=laporan" class="nav-link "><span class="pcoded-micon"><i class="feather icon-printer"></i></span><span class="pcoded-mtext">Data Laporan</span></a>
 					</li>
+					<?php 
+					if($data_user['level'] == 'Owner') {
+					?>
 					<li class="nav-item">
 						<a href="index.php?halaman=pengguna" class="nav-link "><span class="pcoded-micon"><i class="feather icon-user"></i></span><span class="pcoded-mtext">Data Pengguna</span></a>
 					</li>
+					<?php
+					}
+					?>
 					<li class="nav-item">
 						<a href="index.php?halaman=testimoni" class="nav-link "><span class="pcoded-micon"><i class="feather icon-user"></i></span><span class="pcoded-mtext">Testimoni</span></a>
 					</li>
@@ -220,21 +226,30 @@ $data_instansi = $instansi->detail();
 		{
 			include 'kategori/delete.php';
 		}
-		elseif ($_GET['halaman']=='pengguna') 
+		elseif ($_GET['halaman']=='pengguna' && $data_user['level'] == 'Owner') 
 		{
 			include 'pengguna/list.php';
 		}
-		elseif ($_GET['halaman']=='tambahpengguna') 
+		elseif ($_GET['halaman']=='tambahpengguna' && $data_user['level'] == 'Owner') 
 		{
 			include 'pengguna/add.php';
 		}
-		elseif ($_GET['halaman']=='ubahpengguna') 
+		elseif ($_GET['halaman']=='ubahpengguna' && $data_user['level'] == 'Owner') 
 		{
 			include 'pengguna/edit.php';
 		}
-		elseif ($_GET['halaman']=='hapuspengguna') 
+		elseif ($_GET['halaman']=='hapuspengguna' && $data_user['level'] == 'Owner') 
 		{
 			include 'pengguna/delete.php';
+		}
+		elseif ($_GET['halaman']=='pengguna' OR $_GET['halaman']=='tambahpengguna' OR $_GET['halaman']=='ubahpengguna' OR $_GET['halaman']=='hapuspengguna' && $data_user['level'] !== 'Owner') 
+		{
+			echo "<script>alert('Anda tidak punya hak akses!');</script>";
+			?>
+			<script>
+		location='./';
+			</script>
+			<?php
 		}
 		elseif ($_GET['halaman']=='supplier') 
 		{
