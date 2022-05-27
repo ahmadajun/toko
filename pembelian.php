@@ -50,7 +50,7 @@
 								<a href="member.php?halaman=pembayaran&id=<?= $value['id_pengiriman'] ?>" class="btn btn-success btn-xs"><i class="fa fa-money"></i> Pembayaran</a>
 							<?php elseif ($value['status_pembelian']=="Dikirim"): ?>
 								<a href='#penilaian' class='btn btn-warning btn-xs' data-toggle='modal' data-id="<?= $value['id_pengiriman'] ?>" data-idpelanggan="<?= $id_pelanggan ?>" style="background-color: #f7ae09; border-color: #f7ae09;"><i class="fa fa-info-circle"></i> Pembelian Diterima</a>
-								<a href="#" onclick="return t_return(<?= $value['id_pengiriman'] ?>)" class="btn btn-info btn-xs"><i class="fa fa-cube"></i> Return Barang</a>
+								<!-- <a href="#" onclick="return t_return(<?= $value['id_pengiriman'] ?>)" class="btn btn-info btn-xs"><i class="fa fa-cube"></i> Return Barang</a> -->
 								<a href="member.php?halaman=pembayaran&id=<?= $value['id_pengiriman'] ?>" class="btn btn-success btn-xs"><i class="fa fa-money"></i> Pembayaran</a>
 							<?php elseif ($value['status_pembelian']=="Selesai"): ?>
 								<a href='#penilaian' class='btn btn-warning btn-xs' data-toggle='modal' data-id="<?= $value['id_pengiriman'] ?>" data-idpelanggan="<?= $id_pelanggan ?>" style="background-color: #f7ae09; border-color: #f7ae09;"><i class="fa fa-star"></i> Penilaian</a>
@@ -88,10 +88,10 @@
 
 
 
-<div id="m_return" class="modal fade" role="dialog">
+<!-- <div id="m_return" class="modal fade" role="dialog">
 	<div class="modal-dialog">
 
-		<!-- Modal content-->
+
 		<div class="modal-content">
 			<div class="modal-header">
 				<h4 class="modal-title">Return Produk</h4>
@@ -116,7 +116,7 @@
 					<div class="form-group">
 						<label>Jenis Return</label> <br>	
 						<input type="radio" name="jenis" value="Tukar Barang"> Tukar Barang &nbsp;&nbsp;
-						<!-- <input type="radio" name="jenis" value="Uang Kembali"> Uang Kembali &nbsp;&nbsp; -->
+
 						<input type="radio" name="jenis" value="Kirim Kembali"> Kirim Kembali 
 					</div>
 					<div class="form-group">
@@ -145,6 +145,6 @@
 		</div>
 
 	</div>
-</div>
+</div> -->
 
 

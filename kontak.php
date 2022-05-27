@@ -59,11 +59,11 @@
 					</div>
 					<div class="form-group col-md-13">
 						<label for="">Email</label>
-						<input type="text" name="email_pesan" class="form-control" placeholder="Email" required="">
+						<input type="email" name="email_pesan" class="form-control" placeholder="Email" required="">
 					</div>
 					<div class="form-group col-md-13">
 						<label for="">Telepon</label>
-						<input type="text" name="kontak_pesan" class="form-control" placeholder="Telepon" required="">
+						<input type="number" name="kontak_pesan" class="form-control" placeholder="Telepon" required="">
 					</div>
 					<div class="form-group col-md-13">
 						<label for="">Pesan</label>

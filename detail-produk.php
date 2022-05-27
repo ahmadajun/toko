@@ -93,7 +93,7 @@ $gambarproduk = $produk->gambarproduk($id_produk);
 					<!-- <div class="p-review">
 						<a href="">3 reviews</a>|<a href="">Add your review</a>
 					</div> -->
-					<!-- <br>
+					<br>
 					<div class="fw-size-choose">
 						<p>Size</p>
 						<div class="sc-item">
@@ -108,7 +108,7 @@ $gambarproduk = $produk->gambarproduk($id_produk);
 							<input type="radio" name="sc" id="xl-size" disabled>
 							<label for="xl-size">XL</label>
 						</div>
-					</div> -->
+					</div>
 					<?php if ($detail['stok']==0): ?>
 						<?php else: ?>
 							<form method="post">

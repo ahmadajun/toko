@@ -29,7 +29,7 @@ $cek = $pembelian->cek_status_pembayaran($id_pengiriman);
 			<form action="" method="post" enctype="multipart/form-data">
 				<div class="form-group">
 					<label for="">Bukti Pembayaran</label>
-					<input type="file" name="bukti" class="form-control">
+					<input type="file" name="bukti" class="form-control" required="">
 				</div>
 				<div class="text-center">
 					<a href="member.php?halaman=pembelian" class="btn btn-warning"><i class="fa fa-arrow-left"></i> Kembali</a>
