@@ -14,13 +14,13 @@ function smtp_mail($to, $subject, $message, $from_name, $from, $cc, $bcc, $debug
 
   /* -------------------------- Konfigurasi Dasar SMTP ---------------------------------- */
   $mail->SMTPAuth   = true;                               
-  $mail->Host       = 'mail.rastafarcode.com';  // Masukkan Server SMTP
+  $mail->Host       = 'smtp.gmail.com';  // Masukkan Server SMTP
   $mail->Port       = 465;                                      // Masukkan Port SMTP
   $mail->SMTPSecure = 'tls';                                    // Masukkan Pilihan Enkripsi ( `tls` atau `ssl` )
-  $mail->Username   = 'info@rastafarcode.com';                // Masukkan Email yang digunakan selama proses pengiriman email via SMTP
-  $mail->Password   = 'rcode152ab4026';                              // Masukkan Password dari Email tsb
-  $default_email_from       = 'info@rastafarcode.com';        // Masukkan default from pada email
-  $default_email_from_name  = 'Hawamini Store';   
+  $mail->Username   = 'luumodestore@gmail.com';                // Masukkan Email yang digunakan selama proses pengiriman email via SMTP
+  $mail->Password   = 'luumodestore2019';                              // Masukkan Password dari Email tsb
+  $default_email_from       = 'luumodestore@gmail.com';        // Masukkan default from pada email
+  $default_email_from_name  = 'Luumode Store';   
   /* -------------------------- Konfigurasi Dasar SMTP ---------------------------------- */
   
   if(empty($from)) $mail->From = $default_email_from;
