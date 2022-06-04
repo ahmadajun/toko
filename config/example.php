@@ -1,6 +1,8 @@
 <form action="" method="post">
   <button type="submit" name="submit">Click Me</button>
 </form>
+
+<!-- copy dari sini -->
 <head>
 			  <style>
 				table, td, div, h1, p {font-family: Arial, sans-serif;}
@@ -78,6 +80,7 @@
 			  </table>
 			</body>
 			</html>
+			<!-- sampai sini -->
 <?php
 	require_once('function.php');
 	if(isset($_POST['submit']))
