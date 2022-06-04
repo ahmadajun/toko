@@ -124,7 +124,7 @@ class user
 			$this->koneksi->query("UPDATE tbl_user SET nama='$nama',username='$username',telepon='$telepon',jk='$jk',alamat='$alamat' WHERE id_user='$id_user'");
 		}
 	}
-	function ubahpassword($passlama,$pass,$password)
+	function ubahpassword($passlama,$pass,$password) //function admin
 	{
 		$passwordlama= mysqli_real_escape_string($this->koneksi,$passlama);
 		$sip = sha1($passwordlama);

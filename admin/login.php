@@ -1,9 +1,10 @@
-<?php  
+<?php
 include '../config/class.php';
 $data_instansi = $instansi->detail();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>Login Administrator | <?= $data_instansi['nama_instansi']; ?></title>
 	<meta charset="utf-8">
@@ -22,17 +23,14 @@ $data_instansi = $instansi->detail();
 			<div class="row align-items-center text-center">
 				<div class="col-md-12">
 					<div class="card-body">
-						<h4>LOGIN <br> <?= $data_instansi['nama_instansi']; ?></h4> <hr>
-						<?php  
-						if (isset($_POST['masuk'])) 
-						{
-							$hasil = $user->login($_POST['username'],$_POST['password']);
-							if ($hasil=="sukses") 
-							{
+						<h4>LOGIN <br> <?= $data_instansi['nama_instansi']; ?></h4>
+						<hr>
+						<?php
+						if (isset($_POST['masuk'])) {
+							$hasil = $user->login($_POST['username'], $_POST['password']);
+							if ($hasil == "sukses") {
 								echo "<script>location='./';</script>";
-							}
-							else
-							{
+							} else {
 								echo "<div class='alert alert-danger alert-slide-up'><i class='feather icon-info'></i> Username atau Password salah!</div>";
 							}
 						}
@@ -66,4 +64,5 @@ $data_instansi = $instansi->detail();
 	$(".alert-slide-up").alert().delay(3000).slideUp('slow');
 </script>
 </body>
+
 </html>
