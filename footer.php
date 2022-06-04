@@ -13,10 +13,10 @@
 	<div class="social-links-warp">
 		<div class="container">
 			<div class="social-links">
-				<a href="" class="instagram"><i class="fa fa-instagram"></i><span>instagram</span></a>
+				<a href="https://www.instagram.com/luumodeestore/" class="instagram"><i class="fa fa-instagram"></i><span>instagram</span></a>
 				
 				
-				<a href="" class="facebook"><i class="fa fa-facebook"></i><span>facebook</span></a>
+				<a href="https://www.facebook.com/luumodeestore/" class="facebook"><i class="fa fa-facebook"></i><span>facebook</span></a>
 				
 			</div>
 

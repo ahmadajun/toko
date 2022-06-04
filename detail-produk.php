@@ -83,6 +83,11 @@ $gambarproduk = $produk->gambarproduk($id_produk);
 							<?php endif ?>
 						</h4>
 					<h4 class="p-stock">Berat : <?= $detail['berat_produk'] ?> gr</h4>
+					<div class="contact-social">
+						<a href="https://www.instagram.com/luumodeestore/" target="_blank"><i class="fa fa-instagram"></i></a>
+						<a href="https://www.facebook.com/luumodeestore/" target="_blank"><i class="fa fa-facebook"></i></a>
+						<a href="https://api.whatsapp.com/send?phone=6281344662020&amp;text=Hallo%20admin,%20Apakah%20produk%20ini%20ready ?." target="_blank"><i class="fa fa-whatsapp" target="_blank"></i></a>
+					</div>
 					<!-- <div class="p-rating">
 						<i class="fa fa-star-o"></i>
 						<i class="fa fa-star-o"></i>
@@ -93,7 +98,7 @@ $gambarproduk = $produk->gambarproduk($id_produk);
 					<!-- <div class="p-review">
 						<a href="">3 reviews</a>|<a href="">Add your review</a>
 					</div> -->
-					<br>
+					<!-- <br>
 					<div class="fw-size-choose">
 						<p>Size</p>
 						<div class="sc-item">
@@ -108,7 +113,7 @@ $gambarproduk = $produk->gambarproduk($id_produk);
 							<input type="radio" name="sc" id="xl-size" disabled>
 							<label for="xl-size">XL</label>
 						</div>
-					</div>
+					</div> -->
 					<?php if ($detail['stok']==0): ?>
 						<?php else: ?>
 							<form method="post">
