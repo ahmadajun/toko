@@ -368,158 +368,85 @@ class pelanggan
 			require_once('function.php');
 			require_once('fungsi.php');
 			$to       = $email;
-			$subject  = 'Info Akun UD. Anak Tani';
-			$message  = '
-			<!doctype html>
-			<html>
-			<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-			<title>A simple, clean, and responsive HTML invoice template</title>
-
-			<style>
-			.invoice-box {
-				max-width: 800px;
-				margin: auto;
-				padding: 30px;
-				border: 1px solid #eee;
-				box-shadow: 0 0 10px rgba(0, 0, 0, .15);
-				font-size: 16px;
-				line-height: 24px;
-				font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-				color: #555;
-			}
-
-			.invoice-box table {
-				width: 100%;
-				line-height: inherit;
-				text-align: left;
-			}
-
-			.invoice-box table td {
-				padding: 5px;
-				vertical-align: top;
-			}
-
-			.invoice-box table tr.top table td {
-				padding-bottom: 20px;
-			}
-
-			.invoice-box table tr.top table td.title {
-				font-size: 45px;
-				line-height: 45px;
-				color: #333;
-			}
-			.invoice-box table tr.top table td.invoice {
-				float: right;
-			}
-
-			.invoice-box table tr.information table td {
-				padding-bottom: 40px;
-			}
-			.invoice-box table tr.information table .informasi {
-				float: right;
-			}
-
-			.invoice-box table tr.heading th {
-				background: #eee;
-				border-bottom: 1px solid #ddd;
-				font-weight: bold;
-			}
-
-			.invoice-box table tr.details td {
-				padding-bottom: 20px;
-			}
-
-			.invoice-box table tr.item th{
-				border-bottom: 1px solid #eee;
-			}
-
-			.invoice-box table tr.item.last td {
-				border-bottom: none;
-			}
-
-			.invoice-box table tr.total td:nth-child(2) {
-				border-top: 2px solid #eee;
-				font-weight: bold;
-			}
-
-			@media only screen and (max-width: 600px) {
-				.invoice-box table tr.top table td {
-					width: 100%;
-					display: block;
-					text-align: center;
-				}
-
-				.invoice-box table tr.information table td {
-					width: 100%;
-					display: block;
-					text-align: center;
-				}
-			}
-
-			/** RTL **/
-			.rtl {
-				direction: rtl;
-				font-family: Tahoma, "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-			}
-
-			.rtl table {
-				text-align: right;
-			}
-
-			.rtl table tr td:nth-child(2) {
-				text-align: left;
-			}
-			.table1 {
-				font-family: sans-serif;
-				color: #232323;
-				border-collapse: collapse;
-			}
-
-			.table1, th, td {
-				padding: 8px 20px;
-			}
-			</style>
+			$subject  = 'RESET PASSWORD AKUN LUUMODE STORE';
+			$message  = "
+			<head>
+			  <style>
+				table, td, div, h1, p {font-family: Arial, sans-serif;}
+			  </style>
 			</head>
+			<body style='margin:0;padding:0;'>
+			  <table role='presentation' style='width:100%;border-collapse:collapse;border:0;border-spacing:0;background:#ffffff;'>
+				<tr>
+				  <td align='center' style='padding:0;'>
+					<table role='presentation' style='width:602px;border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;text-align:left;'>
 
-			<body>
-			<div class="invoice-box">
-			<table cellpadding="0" cellspacing="0">
-			<tr class="top">
-			<td colspan="2">
-			<table>
-			<tr>
-			<td class="title" >
-			<h5 style="margin-top: -7px;">UD. Tani Maju</h5>
-			</td>
-
-			<td class="invoice">
-			Telp : +62 823-4959-1905 <br>
-			Email : info@tanimajuyogyakarta.com<br>
-			Alamat : Jl. Magelang KM.5,6 No.63, Kutu Tegal, <br> Sinduadi, Kec. Mlati, Kabupaten Sleman, <br> Daerah Istimewa Yogyakarta 55284
-			</td>
-			</tr>
-			</table>
-			</td>
-			</tr>
-			</table>
-			<br><br>
-			<h5 style="margin-top: -30px;">Selamat datang , Atas permintaan anda kami telah mereset password anda.
-			Silahkan gunakan akun dibawah ini untuk login ke</h5>
-			<table class="table1">
-			<tr class="heading">
-			<th>Email</th>
-			<th>Password</th>
-			</tr>
-			<tr class="item">
-			<th>'.$email.'</th>
-			<th>'.$password.'</th>
-			</tr>
-			</table>
-			</div>
+					  <tr>
+						<td style='padding:36px 30px 42px 30px;'>
+						  <table role='presentation' style='width:100%;border-collapse:collapse;border:0;border-spacing:0;'>
+							<tr>
+							  <td style='padding:0 0 36px 0;color:#153643;'>
+								<hr style='color:#153643;'>
+								<h1 style='font-size:24px;margin:20px 0 20px 0;font-family:Arial,sans-serif;color: BLACK;' align='center'>LUUMODE STORE</h1>
+								<hr style='color:#153643;'>
+								
+								<h2 style='font-size:22px;margin:25px 0 20px 0;font-family:Arial,sans-serif;color: black;' align='center'>RESET PASSWORD</h2>
+								<h3 style='margin:15px 0 20px 0;color: black;' align='center'>Akun :</h3>
+								<h2 style='font-size:25px;margin:20px 0 10px 0;font-family:Arial,sans-serif;color: black;' align='center'>$email</h2>
+	
+								<br>
+								<p style='margin:0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;'>Password akun <strong>Luumode Store</strong> anda telah kami reset:</p>
+								<table style='border: 0; padding-top: 10px;'>
+									<tr>
+										<td>Email anda</td>
+										<td>: </td>
+										<td> $email</td>
+									</tr>
+									<tr>
+										<td>Password baru</td>
+										<td>: </td>
+										<td> $password</td>
+									</tr>
+									<tr>
+										<td style='padding-top: 15px;'><p style='margin:0 0 12px 0;font-size:16px;line-height:24px;font-family:Arial,sans-serif;'>Terima Kasih. </p></td>
+									</tr>
+								</table>
+							  
+							  </td>
+							</tr>
+							
+						  </table>
+						</td>
+					  </tr>
+					  <tr>
+						<td style='padding:5px;background:#dddddd;'>
+						  <table role='presentation' style='width:100%;border-collapse:collapse;border:0;border-spacing:0;font-size:9px;font-family:Arial,sans-serif;'>
+							<tr>
+							  <td style='padding:0;width:50%;' align='left'>
+								<p style='margin:0;font-size:14px;line-height:16px;font-family:Arial,sans-serif;color:black;'>
+									Untuk info lebih lanjut, hubungi kami di <br/><p style='font-size:15px;color:black;text-decoration:underline;'><a style='font-size:15px;color:black;text-decoration:underline;' href='https://api.whatsapp.com/send?phone=6281344662020&text=Hallo%20admin,%20Saya%20ingin%20memesan%20catering.%20Bagaimana%20cara%20ordernya%20?'>081344662020</a></p>
+								</p>
+							  </td>
+							  <td style='padding:0;width:50%;' align='right'>
+								<table role='presentation' style='border-collapse:collapse;border:0;border-spacing:0;'>
+								  <tr>
+									<td style='padding:0 0 0 10px;width:38px;'>
+									 <img src='https://github.com/ahmadajun/toko/raw/4eb1ff97cdad7ebda2dd6b3fa145aee7e062b47b/media/upload-instansi/HAWAMINI%20STORE_free-file%20(1).png' alt='logos' width='100' style='height:auto;display:block;border:0;' />
+									</td>
+									
+								  </tr>
+								</table>
+							  </td>
+							</tr>
+						  </table>
+						</td>
+					  </tr>
+					</table>
+				  </td>
+				</tr>
+			  </table>
 			</body>
-			</html>
-			';
+			</html>";
 			smtp_mail($to, $subject, $message, '', '', 0, 0, true);
 			$enpass=sha1($password);
 			$this->koneksi->query("UPDATE tbl_pelanggan SET password_pelanggan='$enpass' WHERE email_pelanggan='$email'");

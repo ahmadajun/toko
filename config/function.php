@@ -2,10 +2,11 @@
 
 require_once('PHPMailer/PHPMailerAutoload.php');
 
-function smtp_mail($to, $subject, $message, $from_name, $from, $cc, $bcc, $debug=false) {
+function smtp_mail($to, $subject, $message, $from_name, $from, $cc, $bcc, $debug=true) {
   $mail = new PHPMailer;
   $mail->SMTPDebug = $debug; // Ubah menjadi true jika ingin menampilkan sistem debug SMTP Mailer
   $mail->isSMTP();
+
   
   // Hapus Semua Tujuan, CC dan BCC
   $mail->ClearAddresses();  
@@ -13,14 +14,21 @@ function smtp_mail($to, $subject, $message, $from_name, $from, $cc, $bcc, $debug
   $mail->ClearBCCs();
 
   /* -------------------------- Konfigurasi Dasar SMTP ---------------------------------- */
-  $mail->SMTPAuth   = true;                               
-  $mail->Host       = 'smtp.gmail.com';  // Masukkan Server SMTP
-  $mail->Port       = 465;                                      // Masukkan Port SMTP
-  $mail->SMTPSecure = 'tls';                                    // Masukkan Pilihan Enkripsi ( `tls` atau `ssl` )
-  $mail->Username   = 'luumodestore@gmail.com';                // Masukkan Email yang digunakan selama proses pengiriman email via SMTP
-  $mail->Password   = 'luumodestore2019';                              // Masukkan Password dari Email tsb
+  //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+  
+  $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+  $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+  $mail->Username   = 'luumodestore@gmail.com';                     //SMTP username
+  $mail->Password   = 'phvhhvzppfpcorzt';                               //SMTP password
+  $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
+  $mail->Port       = 465;        
+  //$mail->isHTML(true);                            //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+  //$mail->AddEmbeddedImage("../media/upload-instansi/logos.png", "logos", "logos.png","base64");
+  //$mail->AddEmbeddedImage('logos.png','logos','logos.png', 'base64');
+
   $default_email_from       = 'luumodestore@gmail.com';        // Masukkan default from pada email
   $default_email_from_name  = 'Luumode Store';   
+  
   /* -------------------------- Konfigurasi Dasar SMTP ---------------------------------- */
   
   if(empty($from)) $mail->From = $default_email_from;

@@ -98,7 +98,7 @@ if (isset($_SESSION['pelanggan']))
 						</div>
 						<button name="ubah_password" class="btn btn-primary">Kirim</button>
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-					</form>
+					
 					<?php  
 					if (isset($_POST['ubah_password'])) 
 					{
@@ -110,11 +110,12 @@ if (isset($_SESSION['pelanggan']))
 						}
 						else
 						{
-							echo "<script>alert('Email yang Anda masukan tidak valid!');</script>";
+							echo "<script>alert('Email yang Anda masukan tidak terdaftar!');</script>";
 							echo "<script>location='login';</script>";
 						}
 					}
 					?>
+					</form>
 				</div>
 
 			</div>
