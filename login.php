@@ -105,7 +105,7 @@ if (isset($_SESSION['pelanggan']))
 						$hasil = $pelanggan->lupa_password($_POST['email']);
 						if ($hasil=="sukses") 
 						{
-							echo "<script>alert('Password baru telah kami kirimkan ke alamat email Anda!');</script>";
+							echo "<script>alert('Password baru telah kami kirimkan ke alamat email Anda! Silahkan cek diinbox dan folder Spam');</script>";
 							echo "<script>location='login';</script>";
 						}
 						else
