@@ -1,4 +1,4 @@
-<?php  
+<?php
 $data = $supplier->show();
 ?>
 <section class="pcoded-main-container">
@@ -24,52 +24,52 @@ $data = $supplier->show();
       <div class="col-xl-6">
         <div class="card">
           <div class="card-body">
-           <h5 class="text-center">Laporan Transaksi Pelanggan <br> Perbulan</h5>
-           <hr>
-           <form method="GET" action="laporan/perbulan.php" target="blank">
-            <div class="row">
-              <div class="col-md-12">
-                <label for="">Perbulan</label>
+            <h5 class="text-center">Laporan Transaksi Pelanggan <br> Perbulan</h5>
+            <hr>
+            <form method="GET" action="laporan/perbulan.php" target="blank">
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="">Perbulan</label>
+                </div>
+                <div class="form-group col-md-6">
+                  <select name="bulan" id="" class="form-control" required="">
+                    <option value="">- Pilih Bulan -</option>
+                    <option value="01">Januari</option>
+                    <option value="02">Februari</option>
+                    <option value="03">Maret</option>
+                    <option value="04">april</option>
+                    <option value="05">Mei</option>
+                    <option value="06">Juni</option>
+                    <option value="07">Juli</option>
+                    <option value="08">Agustus</option>
+                    <option value="09">September</option>
+                    <option value="10">Oktober</option>
+                    <option value="11">November</option>
+                    <option value="12">Desember</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <select name="tahun" class="form-control" required="">
+                    <option value="">- Pilih Tahun -</option>
+                    <?php
+                    $y = date('Y');
+                    for ($i = 2019; $i <= $y + 15; $i++) {
+                      echo "<option value='$i'>$i</option>";
+                    }
+                    ?>
+                  </select>
+                </div>
+                <div class="form-group col-md-12">
+                  <button class="btn btn-primary" type="submit"><i class="fa fa-print"></i> Cetak</button>
+                </div>
               </div>
-              <div class="form-group col-md-6">
-               <select name="bulan" id="" class="form-control" required="">
-                <option value="">- Pilih Bulan -</option>
-                <option value="01">Januari</option>
-                <option value="02">Februari</option>
-                <option value="03">Maret</option>
-                <option value="04">april</option>
-                <option value="05">Mei</option>
-                <option value="06">Juni</option>
-                <option value="07">Juli</option>
-                <option value="08">Agustus</option>
-                <option value="09">September</option>
-                <option value="10">Oktober</option>
-                <option value="11">November</option>
-                <option value="12">Desember</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-             <select name="tahun" class="form-control" required="">
-              <option value="">- Pilih Tahun -</option>
-              <?php  
-              $y = date('Y');
-              for ($i=2019; $i <=$y+15; $i++) { 
-                echo "<option value='$i'>$i</option>";
-              }
-              ?>
-            </select>
-          </div>
-          <div class="form-group col-md-12">
-            <button class="btn btn-primary" type="submit"><i class="fa fa-print"></i> Cetak</button>
+            </form>
+
           </div>
         </div>
-      </form>
-      
-    </div>
-  </div>
 
 
-<!-- </div>
+        <!-- </div>
 <div class="col-xl-6">
   <div class="card">
     <div class="card-body">
@@ -84,9 +84,9 @@ $data = $supplier->show();
         <div class="form-group col-md-6">
          <select name="tahun" class="form-control" required="">
           <option value="">- Pilih Tahun -</option>
-          <?php  
+          <?php
           $y = date('Y');
-          for ($i=2019; $i <=$y+15; $i++) { 
+          for ($i = 2019; $i <= $y + 15; $i++) {
             echo "<option value='$i'>$i</option>";
           }
           ?>
@@ -130,9 +130,9 @@ $data = $supplier->show();
       <div class="col-md-6">
        <select name="tahun" class="form-control" required="">
         <option value="">- Pilih Tahun -</option>
-        <?php  
+        <?php
         $y = date('Y');
-        for ($i=2019; $i <=$y+15; $i++) { 
+        for ($i = 2019; $i <= $y + 15; $i++) {
           echo "<option value='$i'>$i</option>";
         }
         ?>
@@ -163,9 +163,9 @@ $data = $supplier->show();
         <div class="form-group col-md-6">
          <select name="tahun" class="form-control" required="">
           <option value="">- Pilih Tahun -</option>
-          <?php  
+          <?php
           $y = date('Y');
-          for ($i=2019; $i <=$y+15; $i++) { 
+          for ($i = 2019; $i <= $y + 15; $i++) {
             echo "<option value='$i'>$i</option>";
           }
           ?>
@@ -209,9 +209,9 @@ $data = $supplier->show();
       <div class="col-md-6">
        <select name="tahun" class="form-control" required="">
         <option value="">- Pilih Tahun -</option>
-        <?php  
+        <?php
         $y = date('Y');
-        for ($i=2019; $i <=$y+15; $i++) { 
+        for ($i = 2019; $i <= $y + 15; $i++) {
           echo "<option value='$i'>$i</option>";
         }
         ?>
@@ -258,9 +258,9 @@ $data = $supplier->show();
       <div class="col-md-6">
        <select name="tahun" class="form-control" required="">
         <option value="">- Pilih Tahun -</option>
-        <?php  
+        <?php
         $y = date('Y');
-        for ($i=2019; $i <=$y+15; $i++) { 
+        for ($i = 2019; $i <= $y + 15; $i++) {
           echo "<option value='$i'>$i</option>";
         }
         ?>
@@ -276,56 +276,56 @@ $data = $supplier->show();
 </div> -->
 
 
-</div>
-<div class="col-xl-6">
-  <div class="card">
-    <div class="card-body">
-      <h5 class="text-center">Laporan Penjualan</h5>
-     <hr>
-     <form method="GET" action="laporan/kasir.php" target="blank">
-      <div class="row">
-        <div class="col-md-12">
-          <label for="">Perbulan</label>
-        </div>
-        <div class="form-group col-md-6">
-         <select name="bulan" id="" class="form-control" required="">
-          <option value="">- Pilih Bulan -</option>
-          <option value="01">Januari</option>
-          <option value="02">Februari</option>
-          <option value="03">Maret</option>
-          <option value="04">april</option>
-          <option value="05">Mei</option>
-          <option value="06">Juni</option>
-          <option value="07">Juli</option>
-          <option value="08">Agustus</option>
-          <option value="09">September</option>
-          <option value="10">Oktober</option>
-          <option value="11">November</option>
-          <option value="12">Desember</option>
-        </select>
-      </div>
-      <div class="col-md-6">
-       <select name="tahun" class="form-control" required="">
-        <option value="">- Pilih Tahun -</option>
-        <?php  
-        $y = date('Y');
-        for ($i=2019; $i <=$y+15; $i++) { 
-          echo "<option value='$i'>$i</option>";
-        }
-        ?>
-      </select>
-    </div>
-    <div class="form-group col-md-12">
-      <button class="btn btn-primary" type="submit"><i class="fa fa-print"></i> Cetak</button>
-    </div>
-  </div>
-</form>
+        <!-- </div>
+      <div class="col-xl-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="text-center">Laporan Penjualan</h5>
+            <hr>
+            <form method="GET" action="laporan/kasir.php" target="blank">
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="">Perbulan</label>
+                </div>
+                <div class="form-group col-md-6">
+                  <select name="bulan" id="" class="form-control" required="">
+                    <option value="">- Pilih Bulan -</option>
+                    <option value="01">Januari</option>
+                    <option value="02">Februari</option>
+                    <option value="03">Maret</option>
+                    <option value="04">april</option>
+                    <option value="05">Mei</option>
+                    <option value="06">Juni</option>
+                    <option value="07">Juli</option>
+                    <option value="08">Agustus</option>
+                    <option value="09">September</option>
+                    <option value="10">Oktober</option>
+                    <option value="11">November</option>
+                    <option value="12">Desember</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <select name="tahun" class="form-control" required="">
+                    <option value="">- Pilih Tahun -</option>
+                    <?php
+                    $y = date('Y');
+                    for ($i = 2019; $i <= $y + 15; $i++) {
+                      echo "<option value='$i'>$i</option>";
+                    }
+                    ?>
+                  </select>
+                </div>
+                <div class="form-group col-md-12">
+                  <button class="btn btn-primary" type="submit"><i class="fa fa-print"></i> Cetak</button>
+                </div>
+              </div>
+            </form>
 
-</div>
-</div>
+          </div>
+        </div> -->
 
 
-<!-- </div>
+        <!-- </div>
 <div class="col-xl-6">
   <div class="card">
     <div class="card-body">
@@ -336,20 +336,20 @@ $data = $supplier->show();
       </form>
     </div>
   </div> -->
-  
-<!-- </div>
-<div class="col-xl-6">
-  <div class="card">
-    <div class="card-body">
-      <h5 class="text-center">Laporan Stok Produk</h5>
-      <hr>
-      <form action="laporan/stok.php" target="_blank">
-        <button class="btn btn-primary btn-block"><i class="fa fa-print"></i> CETAK</button>
-      </form>
-    </div>
-  </div>
-</div> -->
-<!-- <div class="col-xl-6">
+
+      </div>
+      <div class="col-xl-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="text-center">Laporan Stok Produk</h5>
+            <hr>
+            <form action="laporan/stok.php" target="_blank">
+              <button class="btn btn-primary btn-block"><i class="fa fa-print"></i> CETAK</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="col-xl-6">
   <div class="card">
     <div class="card-body">
       <h5 class="text-center">Laporan Data Admin</h5>
@@ -360,7 +360,7 @@ $data = $supplier->show();
     </div>
   </div>
 </div> -->
-<!-- <div class="col-xl-6">
+      <!-- <div class="col-xl-6">
   <div class="card">
     <div class="card-body">
       <h5 class="text-center">Laporan Data Promo</h5>
@@ -371,7 +371,7 @@ $data = $supplier->show();
     </div>
   </div>
 </div> -->
-<!-- <div class="col-xl-6">
+      <!-- <div class="col-xl-6">
   <div class="card">
     <div class="card-body">
       <h5 class="text-center">Laporan Data Return Produk</h5>
@@ -382,6 +382,6 @@ $data = $supplier->show();
     </div>
   </div>
 </div> -->
-</div>
-</div>
+    </div>
+  </div>
 </section>

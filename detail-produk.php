@@ -1,4 +1,4 @@
-<?php  
+<?php
 include 'config/class.php';
 $id_produk = $_GET['id'];
 $detail = $produk->detail($id_produk);
@@ -7,6 +7,7 @@ $gambarproduk = $produk->gambarproduk($id_produk);
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
+
 <head>
 	<title>Detail Produk | Luumode Store</title>
 	<meta charset="UTF-8">
@@ -14,22 +15,22 @@ $gambarproduk = $produk->gambarproduk($id_produk);
 	<meta name="keywords" content="divisima, eCommerce, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
-	<link href="img/favicon2.ico" rel="shortcut icon" type="image/x-icon"/>
-	
+	<link href="img/favicon2.ico" rel="shortcut icon" type="image/x-icon" />
+
 
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
 
 
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/flaticon.css"/>
-	<link rel="stylesheet" href="css/slicknav.min.css"/>
-	<link rel="stylesheet" href="css/jquery-ui.min.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.min.css"/>
-	<link rel="stylesheet" href="css/animate.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" href="css/flaticon.css" />
+	<link rel="stylesheet" href="css/slicknav.min.css" />
+	<link rel="stylesheet" href="css/jquery-ui.min.css" />
+	<link rel="stylesheet" href="css/owl.carousel.min.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<link rel="stylesheet" href="css/style.css" />
 
 
 	<!--[if lt IE 9]>
@@ -38,6 +39,7 @@ $gambarproduk = $produk->gambarproduk($id_produk);
 	<![endif]-->
 
 </head>
+
 <body>
 	<!-- Page Preloder -->
 	<div id="preloder">
@@ -65,8 +67,8 @@ $gambarproduk = $produk->gambarproduk($id_produk);
 					<div class="product-thumbs" tabindex="1" style="overflow: hidden; outline: none;">
 						<div class="product-thumbs-track">
 							<div class="pt active" data-imgbigurl="media/upload-produk/<?= $detail['gambar_produk'] ?>"><img src="media/upload-produk/<?= $detail['gambar_produk'] ?>" alt=""></div>
-							<?php foreach ($gambarproduk as $key => $value): ?>
-								
+							<?php foreach ($gambarproduk as $key => $value) : ?>
+
 								<div class="pt" data-imgbigurl="media/upload-gambar/<?= $value['gambar'] ?>"><img src="media/upload-gambar/<?= $value['gambar'] ?>" alt=""></div>
 							<?php endforeach ?>
 						</div>
@@ -76,12 +78,12 @@ $gambarproduk = $produk->gambarproduk($id_produk);
 					<h2 class="p-title"><?= $detail['nama_produk'] ?></h2>
 					<h3 class="p-price">Rp. <?= number_format($detail['harga_produk']) ?></h3>
 					<h4 class="p-stock">
-						<?php if ($detail['stok']==0): ?>
+						<?php if ($detail['stok'] == 0) : ?>
 							Stok : <span>Tidak Tersedia</span>
-							<?php else: ?>
-								Stok : <span>Tersedia (<?= $detail['stok'] ?>)</span>
-							<?php endif ?>
-						</h4>
+						<?php else : ?>
+							Stok : <span>Tersedia (<?= $detail['stok'] ?>)</span>
+						<?php endif ?>
+					</h4>
 					<h4 class="p-stock">Berat : <?= $detail['berat_produk'] ?> gr</h4>
 					<div class="contact-social">
 						<a href="https://www.instagram.com/luumodeestore/" target="_blank"><i class="fa fa-instagram"></i></a>
@@ -114,37 +116,30 @@ $gambarproduk = $produk->gambarproduk($id_produk);
 							<label for="xl-size">XL</label>
 						</div>
 					</div> -->
-					<?php if ($detail['stok']==0): ?>
-						<?php else: ?>
-							<form method="post">
-								<div class="quantity">
-									<p>Jumlah</p>
-									<div class="pro-qty"><input type="text" value="1" name="jumlah" required=""></div>
-								</div>
+					<?php if ($detail['stok'] == 0) : ?>
+					<?php else : ?>
+						<form method="post">
+							<div class="quantity">
+								<p>Jumlah</p>
+								<div class="pro-qty"><input type="text" value="1" name="jumlah" required=""></div>
+							</div>
 
 
-								<button name="masukankeranjang" class="site-btn">MASUKAN KERANJANG</button>
-							<?php endif ?>
+							<button name="masukankeranjang" class="site-btn">MASUKAN KERANJANG</button>
+						<?php endif ?>
 						</form>
-						<?php  
-						if (isset($_POST['masukankeranjang'])) 
-						{
+						<?php
+						if (isset($_POST['masukankeranjang'])) {
 							$jumlah = $_POST['jumlah'];
-							if ($jumlah < 1) 
-							{
+							if ($jumlah < 1) {
 								echo "<script>alert('Mohon maaf, jumlah minimal pembelian 1 produk!');</script>";
 								echo "<script>location='';</script>";
-							}
-							else
-							{
-								if ($jumlah > $detail['stok']) 
-								{
+							} else {
+								if ($jumlah > $detail['stok']) {
 									echo "<script>alert('Mohon maaf, stok tidak mencukupi!');</script>";
 									echo "<script>location='';</script>";
-								}
-								else
-								{
-									$pembelian->masukankeranjang($_POST['jumlah'],$id_produk);
+								} else {
+									$pembelian->masukankeranjang($_POST['jumlah'], $id_produk);
 									echo "<script>alert('Produk berhasil dimasukan ke keranjang');</script>";
 									echo "<script>location='keranjang';</script>";
 								}
@@ -165,33 +160,34 @@ $gambarproduk = $produk->gambarproduk($id_produk);
 
 
 						</div>
-					</div>
 				</div>
 			</div>
-		</section>
+		</div>
+	</section>
 
-		<?php include 'footer.php'; ?>
+	<?php include 'footer.php'; ?>
 
-		<script src="js/jquery-3.2.1.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-		<script src="https://cdn.datatables.net/rowreorder/1.2.5/js/dataTables.rowReorder.min.js"></script>
-		<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-		<script src="js/jquery.slicknav.min.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/jquery.nicescroll.min.js"></script>
-		<script src="js/jquery.zoom.min.js"></script>
-		<script src="js/jquery-ui.min.js"></script>
-		<script src="js/main.js"></script>
-		<script >
-			$(document).ready(function() {
-				var table = $('#example').DataTable( {
-					rowReorder: {
-						selector: 'td:nth-child(2)'
-					},
-					responsive: true
-				} );
-			} );
-		</script>
-	</body>
-	</html>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/rowreorder/1.2.5/js/dataTables.rowReorder.min.js"></script>
+	<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+	<script src="js/jquery.slicknav.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.nicescroll.min.js"></script>
+	<script src="js/jquery.zoom.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		$(document).ready(function() {
+			var table = $('#example').DataTable({
+				rowReorder: {
+					selector: 'td:nth-child(2)'
+				},
+				responsive: true
+			});
+		});
+	</script>
+</body>
+
+</html>
